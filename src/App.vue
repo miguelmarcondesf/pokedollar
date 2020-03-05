@@ -3,8 +3,8 @@
     <p>Dolár: $ {{ this.dolar }}</p>
     <p>{{ this.pokemonId }}</p>
     <p>{{ this.pokemon.name }}</p>
-    <img :src="this.pokemon.sprites.front_default" alt="">
-    <img :src="this.pokemon.sprites.back_default" alt="">
+    <img :src="this.pokemonFront" alt="">
+    <img :src="this.pokemonBack" alt="">
   </div>
 </template>
 
@@ -17,7 +17,9 @@ export default {
     return {
       dolar: '',
       pokemon: {},
-      pokemonId: ''
+      pokemonId: '',
+      pokemonFront: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
+      pokemonBack: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png'
     }
   },
   created: function () {
@@ -30,6 +32,8 @@ export default {
           .then((result) => {
             console.log(result)
             this.pokemon = result.data
+            this.pokemonFront = this.pokemon.sprites.front_default
+            this.pokemonBack = this.pokemon.sprites.back_default
           })
       })
   }

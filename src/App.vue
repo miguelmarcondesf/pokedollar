@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <p>{{ this.dolar }}</p>
+    <p>Dolár: $ {{ this.dolar }}</p>
     <p>{{ this.pokemonId }}</p>
     <p>{{ this.pokemon.name }}</p>
     <img :src="this.pokemon.sprites.front_default" alt="">

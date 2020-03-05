@@ -30,7 +30,6 @@ export default {
 
         axios.get(`https://pokeapi.co/api/v2/pokemon/${this.pokemonId}`)
           .then((result) => {
-            console.log(result)
             this.pokemon = result.data
             this.pokemonFront = this.pokemon.sprites.front_default
             this.pokemonBack = this.pokemon.sprites.back_default

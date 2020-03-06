@@ -25,7 +25,7 @@ export default {
   created: function () {
     axios.get('https://economia.awesomeapi.com.br/jsonp/USD-BRL')
       .then((result) => {
-        this.dolar = Number(result.data[0].high).toFixed(2)
+        this.dolar = Number(result.data[0].bid).toFixed(2)
         this.pokemonId = this.dolar.replace('.', '')
 
         axios.get(`https://pokeapi.co/api/v2/pokemon/${this.pokemonId}`)

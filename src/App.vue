@@ -40,7 +40,6 @@ export default {
   created: function () {
     axios.get('https://economia.awesomeapi.com.br/jsonp/USD-BRL')
       .then((result) => {
-        console.log(result)
         this.bidDolar = Number(result.data[0].bid).toFixed(2)
         this.askDolar = Number(result.data[0].ask).toFixed(2)
         this.bidPokemonId = this.bidDolar.replace('.', '')
@@ -72,5 +71,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.poke-card {
+  p {
+    text-transform: capitalize;
+  }
 }
 </style>
